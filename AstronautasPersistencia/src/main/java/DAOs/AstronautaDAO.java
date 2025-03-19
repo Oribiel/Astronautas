@@ -10,4 +10,7 @@ package DAOs;
  */
 public class AstronautaDAO {
     
+    private void guardarAstronauta(){
+        
+    }
 }
