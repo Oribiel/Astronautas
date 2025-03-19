@@ -9,5 +9,5 @@ package com.mycompany.astronautasnegocio;
  * @author oribi
  */
 public class AstronautaNegocio {
-    
+   // aqui se debe de recibir la interface 
 }
