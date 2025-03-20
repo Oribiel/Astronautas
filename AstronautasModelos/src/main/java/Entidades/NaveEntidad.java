@@ -57,6 +57,23 @@ public class NaveEntidad implements Serializable {
 
     public NaveEntidad() {
     }
+
+    public NaveEntidad(String nombre, String color, String pais, Integer numPasajeros, List<AstronautasNaveEntidad> destino) {
+        this.nombre = nombre;
+        this.color = color;
+        this.pais = pais;
+        this.numPasajeros = numPasajeros;
+        this.destino = destino;
+    }
+
+    public NaveEntidad(String nombre, String color, String pais, Integer numPasajeros, String tamanío) {
+        this.nombre = nombre;
+        this.color = color;
+        this.pais = pais;
+        this.numPasajeros = numPasajeros;
+        this.tamanío = tamanío;
+    }
+    
     
     
 

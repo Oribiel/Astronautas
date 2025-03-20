@@ -51,13 +51,34 @@ public class AstronautaEntidad implements Serializable {
     private String tipoSangre;
     
     //RELACION MUERTE 
-    @OneToOne(mappedBy = "astronauta", cascade= CascadeType.ALL)
+    @OneToOne(mappedBy = "astronauta", cascade= CascadeType.PERSIST)
     private MuerteEntidad muerte;
     
     @OneToMany(mappedBy= "astronauta", cascade= CascadeType.PERSIST)
     private List<AstronautasNaveEntidad> destino;
 
     public AstronautaEntidad() {
+    }
+
+    public AstronautaEntidad(String nombres, String paterno, String materno, Integer edad, String sexo, String pais, String tipoSangre, MuerteEntidad muerte) {
+        this.nombres = nombres;
+        this.paterno = paterno;
+        this.materno = materno;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.pais = pais;
+        this.tipoSangre = tipoSangre;
+        this.muerte = muerte;
+    }
+
+    public AstronautaEntidad(String nombres, String paterno, String materno, Integer edad, String sexo, String pais, String tipoSangre) {
+        this.nombres = nombres;
+        this.paterno = paterno;
+        this.materno = materno;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.pais = pais;
+        this.tipoSangre = tipoSangre;
     }
     
     

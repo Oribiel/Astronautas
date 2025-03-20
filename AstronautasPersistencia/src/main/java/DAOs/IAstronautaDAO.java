@@ -12,4 +12,6 @@ import Entidades.AstronautaEntidad;
  */
 public interface IAstronautaDAO {
     void crearAstronauta(AstronautaEntidad astronauta);
+    
+    void guardar(AstronautaEntidad astronauta);
 }

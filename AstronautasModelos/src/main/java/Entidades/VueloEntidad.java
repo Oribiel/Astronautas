@@ -6,6 +6,7 @@ package Entidades;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +31,7 @@ public class VueloEntidad implements Serializable {
    Integer numPasajeros;
    
    @Column(name="FechaHoraSalida")
-   private LocalDateTime fechaHoraSalida;
+   private Calendar fechaHoraSalida;
    
    @ManyToOne
    @JoinColumn(name= "id_Nave", nullable= false)
@@ -46,6 +47,17 @@ public class VueloEntidad implements Serializable {
 
     public VueloEntidad() {
     }
+
+    public VueloEntidad(Integer numPasajeros, Calendar fechaHoraSalida, NaveEntidad nave) {
+        this.numPasajeros = numPasajeros;
+        this.fechaHoraSalida = fechaHoraSalida;
+        this.nave = nave;
+    }
+
+    public VueloEntidad(Integer numPasajeros, NaveEntidad nave) {
+        this.numPasajeros = numPasajeros;
+        this.nave = nave;
+    }
     
     
 
@@ -57,13 +69,15 @@ public class VueloEntidad implements Serializable {
         this.numPasajeros = numPasajeros;
     }
 
-    public LocalDateTime getFechaHoraSalida() {
+    public Calendar getFechaHoraSalida() {
         return fechaHoraSalida;
     }
 
-    public void setFechaHoraSalida(LocalDateTime fechaHoraSalida) {
+    public void setFechaHoraSalida(Calendar fechaHoraSalida) {
         this.fechaHoraSalida = fechaHoraSalida;
     }
+
+    
 
     public NaveEntidad getNave() {
         return nave;

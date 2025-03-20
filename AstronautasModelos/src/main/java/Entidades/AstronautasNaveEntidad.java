@@ -43,6 +43,12 @@ public class AstronautasNaveEntidad implements Serializable {
     public AstronautasNaveEntidad() {
     }
 
+    public AstronautasNaveEntidad(AstronautaEntidad astronauta, NaveEntidad nave) {
+        this.astronauta = astronauta;
+        this.nave = nave;
+    }
+    
+    
     
     
     public AstronautaEntidad getAstronauta() {

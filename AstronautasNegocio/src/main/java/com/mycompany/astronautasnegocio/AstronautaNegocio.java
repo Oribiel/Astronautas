@@ -25,4 +25,8 @@ public class AstronautaNegocio implements IAstronautaNegocio {
         
         astronautaDAO.crearAstronauta(astronauta);
     }  
+    
+    public void guardar(AstronautaEntidad astronauta){
+        astronautaDAO.guardar(astronauta);
+    }
 }

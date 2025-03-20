@@ -24,15 +24,17 @@ public class PruebaAstronautas {
         IAstronautaNegocio astronautaNegocio = new AstronautaNegocio(astronautaDAO);
 
         AstronautaEntidad astronauta = new AstronautaEntidad();
-        astronauta.setNombres("Ori");
-        astronauta.setMaterno("Arr");
-        astronauta.setPaterno("Beltran");
-        astronauta.setEdad(20);
-        astronauta.setSexo("Masculino");
-        astronauta.setPais("Mexico");
-        astronauta.setTipoSangre("O+");
+//        astronauta.setNombres("Ori");
+//        astronauta.setMaterno("Arr");
+//        astronauta.setPaterno("Beltran");
+//        astronauta.setEdad(20);
+//        astronauta.setSexo("Masculino");
+//        astronauta.setPais("Mexico");
+//        astronauta.setTipoSangre("O+");
+//
+//      
+//        astronautaNegocio.crearAstronauta(astronauta);
 
-      
-        astronautaNegocio.crearAstronauta(astronauta);
+          astronautaNegocio.guardar(astronauta);
     }
 }

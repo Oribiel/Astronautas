@@ -6,6 +6,7 @@ package Entidades;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,10 +31,10 @@ public class MuerteEntidad implements Serializable {
     private Long id;
     
     @Column(name = "fechaHoraMuerte" , nullable = false)
-    private LocalDateTime fechaHoraMuerte;
+    private Calendar fechaHoraMuerte;
     
     // RELACION 1 A 1 CON ASTRONAUTA
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "idAstronauta",  nullable = false)
     private AstronautaEntidad astronauta;
 
@@ -48,15 +49,24 @@ public class MuerteEntidad implements Serializable {
     public MuerteEntidad() {
     }
 
+    public MuerteEntidad(Calendar fechaHoraMuerte, AstronautaEntidad astronauta) {
+        this.fechaHoraMuerte = fechaHoraMuerte;
+        this.astronauta = astronauta;
+    }
     
     
-    public LocalDateTime getFechaHoraMuerte() {
+
+    public Calendar getFechaHoraMuerte() {
         return fechaHoraMuerte;
     }
 
-    public void setFechaHoraMuerte(LocalDateTime fechaHoraMuerte) {
+    public void setFechaHoraMuerte(Calendar fechaHoraMuerte) {
         this.fechaHoraMuerte = fechaHoraMuerte;
     }
+
+    
+    
+  
 
     public AstronautaEntidad getAstronauta() {
         return astronauta;
