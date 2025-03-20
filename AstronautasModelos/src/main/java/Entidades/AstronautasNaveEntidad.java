@@ -5,6 +5,7 @@
 package Entidades;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,11 +24,11 @@ public class AstronautasNaveEntidad implements Serializable {
    @GeneratedValue(strategy= GenerationType.IDENTITY)
    private Long id;
    
-   @ManyToOne
+   @ManyToOne(cascade = CascadeType.PERSIST)
    @JoinColumn(name= "id_astronauta", nullable= false)
    private AstronautaEntidad astronauta;
    
-   @ManyToOne
+   @ManyToOne(cascade = CascadeType.PERSIST)
    @JoinColumn(name= "id_Nave", nullable= false)
    private NaveEntidad nave;
 

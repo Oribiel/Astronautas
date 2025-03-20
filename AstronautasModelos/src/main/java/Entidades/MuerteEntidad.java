@@ -33,7 +33,7 @@ public class MuerteEntidad implements Serializable {
     private LocalDateTime fechaHoraMuerte;
     
     // RELACION 1 A 1 CON ASTRONAUTA
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idAstronauta",  nullable = false)
     private AstronautaEntidad astronauta;
 
@@ -56,6 +56,14 @@ public class MuerteEntidad implements Serializable {
 
     public void setFechaHoraMuerte(LocalDateTime fechaHoraMuerte) {
         this.fechaHoraMuerte = fechaHoraMuerte;
+    }
+
+    public AstronautaEntidad getAstronauta() {
+        return astronauta;
+    }
+
+    public void setAstronauta(AstronautaEntidad astronauta) {
+        this.astronauta = astronauta;
     }
     
     

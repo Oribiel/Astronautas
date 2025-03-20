@@ -17,13 +17,12 @@ import com.mycompany.astronautasnegocio.IAstronautaNegocio;
 public class PruebaAstronautas {
 
     public static void main(String[] args) {
-       // Crear instancia del DAO
+       
         IAstronautaDAO astronautaDAO = new AstronautaDAO();
 
-        // Crear instancia del BO
+        
         IAstronautaNegocio astronautaNegocio = new AstronautaNegocio(astronautaDAO);
 
-        // Crear nuevo astronauta
         AstronautaEntidad astronauta = new AstronautaEntidad();
         astronauta.setNombres("Ori");
         astronauta.setMaterno("Arr");
@@ -33,7 +32,7 @@ public class PruebaAstronautas {
         astronauta.setPais("Mexico");
         astronauta.setTipoSangre("O+");
 
-        // Llamar al negocio para crear astronauta
+      
         astronautaNegocio.crearAstronauta(astronauta);
     }
 }

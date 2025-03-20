@@ -51,7 +51,7 @@ public class AstronautaEntidad implements Serializable {
     private String tipoSangre;
     
     //RELACION MUERTE 
-    @OneToOne(mappedBy = "astronauta")
+    @OneToOne(mappedBy = "astronauta", cascade= CascadeType.ALL)
     private MuerteEntidad muerte;
     
     @OneToMany(mappedBy= "astronauta", cascade= CascadeType.PERSIST)
