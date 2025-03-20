@@ -44,6 +44,11 @@ public class VueloEntidad implements Serializable {
         this.id = id;
     }
 
+    public VueloEntidad() {
+    }
+    
+    
+
     public Integer getNumPasajeros() {
         return numPasajeros;
     }
@@ -68,5 +73,5 @@ public class VueloEntidad implements Serializable {
         this.nave = nave;
     }
    
-   
+    
 }

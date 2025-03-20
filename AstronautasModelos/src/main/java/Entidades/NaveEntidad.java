@@ -55,6 +55,11 @@ public class NaveEntidad implements Serializable {
         this.id = id;
     }
 
+    public NaveEntidad() {
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }

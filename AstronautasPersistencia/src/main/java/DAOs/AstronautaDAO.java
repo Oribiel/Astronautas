@@ -4,13 +4,27 @@
  */
 package DAOs;
 
+import Entidades.AstronautaEntidad;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author oribi
  */
-public class AstronautaDAO {
+public class AstronautaDAO implements IAstronautaDAO{
     
-    private void guardarAstronauta(){
-        
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("AstronautasPU");
+    
+    public void crearAstronauta(AstronautaEntidad astronauta) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(astronauta);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
     }
 }

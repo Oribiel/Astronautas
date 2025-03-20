@@ -4,10 +4,12 @@
  */
 package DAOs;
 
+import Entidades.AstronautaEntidad;
+
 /**
  *
  * @author oribi
  */
 public interface IAstronautaDAO {
-    
+    void crearAstronauta(AstronautaEntidad astronauta);
 }

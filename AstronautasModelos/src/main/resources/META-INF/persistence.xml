@@ -2,12 +2,11 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="AstronautasPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>com.mycompany.astronautasmodelos.AstronautaEntidad</class>
     <class>Entidades.AstronautaEntidad</class>
     <class>Entidades.MuerteEntidad</class>
-    <class>Entidades.Nave</class>
     <class>Entidades.AstronautasNaveEntidad</class>
     <class>Entidades.VueloEntidad</class>
+    <class>Entidades.NaveEntidad</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/u2?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

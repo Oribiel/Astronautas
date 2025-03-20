@@ -4,10 +4,12 @@
  */
 package com.mycompany.astronautasnegocio;
 
+import Entidades.AstronautaEntidad;
+
 /**
  *
  * @author oribi
  */
 public interface IAstronautaNegocio {
-    
+    void crearAstronauta(AstronautaEntidad astronauta);
 }

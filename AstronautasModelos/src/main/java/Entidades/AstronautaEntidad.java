@@ -57,6 +57,11 @@ public class AstronautaEntidad implements Serializable {
     @OneToMany(mappedBy= "astronauta", cascade= CascadeType.PERSIST)
     private List<AstronautasNaveEntidad> destino;
 
+    public AstronautaEntidad() {
+    }
+    
+    
+
     public Long getId() {
         return id;
     }

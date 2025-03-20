@@ -4,10 +4,25 @@
  */
 package com.mycompany.astronautasnegocio;
 
+import DAOs.IAstronautaDAO;
+import Entidades.AstronautaEntidad;
+
 /**
  *
  * @author oribi
  */
-public class AstronautaNegocio {
-   // aqui se debe de recibir la interface 
+public class AstronautaNegocio implements IAstronautaNegocio {
+  
+    private IAstronautaDAO astronautaDAO;
+    
+      public AstronautaNegocio(IAstronautaDAO astronautaDAO) {
+        this.astronautaDAO = astronautaDAO;
+    }
+      
+      
+    public void crearAstronauta(AstronautaEntidad astronauta) {
+       //Logica de negocio iria aqui 
+        
+        astronautaDAO.crearAstronauta(astronauta);
+    }  
 }

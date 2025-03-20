@@ -45,6 +45,11 @@ public class MuerteEntidad implements Serializable {
         this.id = id;
     }
 
+    public MuerteEntidad() {
+    }
+
+    
+    
     public LocalDateTime getFechaHoraMuerte() {
         return fechaHoraMuerte;
     }
