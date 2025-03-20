@@ -5,6 +5,9 @@
     <class>com.mycompany.astronautasmodelos.AstronautaEntidad</class>
     <class>Entidades.AstronautaEntidad</class>
     <class>Entidades.MuerteEntidad</class>
+    <class>Entidades.Nave</class>
+    <class>Entidades.AstronautasNaveEntidad</class>
+    <class>Entidades.VueloEntidad</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/u2?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

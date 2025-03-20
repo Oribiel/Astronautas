@@ -5,11 +5,14 @@
 package Entidades;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -36,7 +39,7 @@ public class AstronautaEntidad implements Serializable {
     private String materno;
     
     @Column(name = "edad", nullable = false)
-    private int edad;
+    private Integer edad;
 
     @Column(name = "sexo", length = 15, nullable = false)
     private String sexo;
@@ -44,13 +47,15 @@ public class AstronautaEntidad implements Serializable {
     @Column(name = "pais", length = 35, nullable = false)
     private String pais;
     
-    @Column(name="sangre", length = 5, nullable = false)
-    private String sangre;
+    @Column(name="tipoSangre", length = 5, nullable = false)
+    private String tipoSangre;
     
     //RELACION MUERTE 
     @OneToOne(mappedBy = "astronauta")
     private MuerteEntidad muerte;
     
+    @OneToMany(mappedBy= "astronauta", cascade= CascadeType.PERSIST)
+    private List<AstronautasNaveEntidad> destino;
 
     public Long getId() {
         return id;
@@ -60,29 +65,78 @@ public class AstronautaEntidad implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public String getNombres() {
+        return nombres;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof AstronautaEntidad)) {
-            return false;
-        }
-        AstronautaEntidad other = (AstronautaEntidad) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    @Override
-    public String toString() {
-        return "Entidades.AstronautaEntidad[ id=" + id + " ]";
+    public String getPaterno() {
+        return paterno;
+    }
+
+    public void setPaterno(String paterno) {
+        this.paterno = paterno;
+    }
+
+    public String getMaterno() {
+        return materno;
+    }
+
+    public void setMaterno(String materno) {
+        this.materno = materno;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getTipoSangre() {
+        return tipoSangre;
+    }
+
+    public void setTipoSangre(String tipoSangre) {
+        this.tipoSangre = tipoSangre;
+    }
+
+    public MuerteEntidad getMuerte() {
+        return muerte;
+    }
+
+    public void setMuerte(MuerteEntidad muerte) {
+        this.muerte = muerte;
+    }
+
+    public List<AstronautasNaveEntidad> getDestino() {
+        return destino;
+    }
+
+    public void setDestino(List<AstronautasNaveEntidad> destino) {
+        this.destino = destino;
     }
     
+    
+   
 }

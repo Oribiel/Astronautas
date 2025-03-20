@@ -34,7 +34,7 @@ public class MuerteEntidad implements Serializable {
     
     // RELACION 1 A 1 CON ASTRONAUTA
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "idAstronauta", referencedColumnName = "idAstronauta", nullable = false)
+    @JoinColumn(name = "idAstronauta",  nullable = false)
     private AstronautaEntidad astronauta;
 
     public Long getId() {
@@ -45,29 +45,14 @@ public class MuerteEntidad implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public LocalDateTime getFechaHoraMuerte() {
+        return fechaHoraMuerte;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof MuerteEntidad)) {
-            return false;
-        }
-        MuerteEntidad other = (MuerteEntidad) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setFechaHoraMuerte(LocalDateTime fechaHoraMuerte) {
+        this.fechaHoraMuerte = fechaHoraMuerte;
     }
-
-    @Override
-    public String toString() {
-        return "Entidades.MuerteEntidad[ id=" + id + " ]";
-    }
+    
+    
     
 }
